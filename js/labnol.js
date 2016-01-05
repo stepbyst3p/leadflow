@@ -83,9 +83,16 @@ function hasNumberInUrl() {
 }
 
 function hasBreadCrumbs() {
-    var bCrumbs = document.getElementsByClassName('.breadcrumbs').children.length;
-    var bCrumbsUl = document.getElementsByClassName('.breadcrumbs ul').children.length;
-    if (bCrumbs > 2 || bCrumbsUl > 2) {
+    // Тут дурацкая логика. А если чувак называет
+    // крошки не breadcrumbs, а просто crumbs?
+    // Я знаю чувака, который называет класс «hleb». Серьезно.
+    // TODO:
+    // В первую очередь нужно опираться на семантику.
+    // В данном случае нужно искать элемент <nav>.
+
+    var crumbs = document.querySelectorAll('.breadcrumbs > *');
+
+    if (crumbs > 2) {
         return true
         console.log(' Крошки кто-то не убрал ')
     }
