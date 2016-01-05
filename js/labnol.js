@@ -46,12 +46,11 @@ function isMarket() {
 
     debugMessage += '\nВсего правил сработало: ' + probability
 
-    alert(debugMessage)
 
     // как только увидишь это — удали алерт, чтобы не бесил.
     console.log(debugMessage)
 
-    if (probability > 3) {
+    if (probability >= 3) {
         bar.style.display = 'block';
     } else {
         return false
