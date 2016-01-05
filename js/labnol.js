@@ -24,12 +24,32 @@ function isMarket() {
     // if (rule4) probability++;
 
     // зацени, как сразу стало понятно что происходит
-    if (hasCtaButtons()) probability++;
-    if (hasNumberInUrl()) probability++;
-    if (hasBreadCrumbs()) probability++;
-    if (hasKeywordsInTitle()) probability++;
 
-    alert('Вероятность, что это интернет магаз: ' + probability)
+    var debugMessage = 'Информация о странице:\n'
+
+    if (hasCtaButtons()) {
+        probability++
+        debugMessage += '- есть призывы к действию\n'
+    }
+    if (hasNumberInUrl()) {
+        probability++
+        debugMessage += '- есть номера в урле\n'
+    }
+    if (hasBreadCrumbs()) {
+        probability++
+        debugMessage += '- есть хлебные крошки\n'
+    }
+    if (hasKeywordsInTitle()) {
+        probability++
+        debugMessage += '- есть ключевые слова в тайтле\n'
+    }
+
+    debugMessage += '\nВсего правил сработало: ' + probability
+
+    alert(debugMessage)
+
+    // как только увидишь это — удали алерт, чтобы не бесил.
+    console.log(debugMessage)
 
     if (probability > 3) {
         bar.style.display = 'block';
@@ -90,7 +110,7 @@ function hasBreadCrumbs() {
     // В первую очередь нужно опираться на семантику.
     // В данном случае нужно искать элемент <nav>.
 
-    var crumbs = document.querySelectorAll('.breadcrumbs > *');
+    var crumbs = document.querySelectorAll('.breadcrumb > *').length;
 
     if (crumbs > 2) {
         return true
