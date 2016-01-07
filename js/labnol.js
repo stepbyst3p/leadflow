@@ -129,3 +129,17 @@ function hasKeywordsInTitle() {
         return true;
     }
 };
+
+function openPopup() {
+    var popup = document.getElementById('popup')
+    var closePopupArea = document.getElementById('closePopupArea')
+    popup.style.display = 'block'
+    closePopupArea.style.display = 'block'
+}
+
+function closePopup() {
+    var popup = document.getElementById('popup')
+    var closePopupArea = document.getElementById('closePopupArea')
+    popup.style.display = 'none'
+    closePopupArea.style.display = 'none'
+}

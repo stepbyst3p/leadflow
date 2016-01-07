@@ -72,7 +72,7 @@
             <div class="col-md-8">
                 <div id="cta" class="cta">Купите <span class="cr-product-name"></span> в рассрочку по самой выгодной цене: <span class="cr-price">2500р/мес</span></div>
                 <div id="cr-btn-box">
-                    <button class="btn  cr-btn" type="button" data-toggle="modal" data-target="#p0pup">Купить в кредит</button>
+                    <button class="btn  cr-btn" type="button" onClick="openPopup()">Купить в кредит</button>
                 </div>
             </div>
 
@@ -90,11 +90,12 @@
         <div class="container">
 
 
-            <div class="modal fade" id="p0pup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div id="popup" style="display: none;">
+                <div id="closePopupArea" style="display:none" onClick="closePopup()"></div>
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <button type="button" class="close" onClick="closePopup()"><span aria-hidden="true">×</span></button>
                             <h5 class="modal-title" id="myModalLabel">Купить <span class="cr-product-name"></span> в рассрочку</h5>
                         </div>
                         <div class="modal-body">
