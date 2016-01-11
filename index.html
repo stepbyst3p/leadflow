@@ -6,7 +6,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <link href='css/labnol.css' rel='stylesheet' type='text/css'>
+
 
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -15,7 +15,7 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
     <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 
-    <script type="text/javascript" src="js/labnol.js"></script>
+
 
 
 
@@ -23,7 +23,7 @@
 
 
 <body>
-
+    <div id="yo"></div>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
@@ -67,73 +67,9 @@
     </div>
     <!-- /container -->
 
-    <div id="cr-bar" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Замер производится БЕСПЛАТНО. Оставьте заявку, мы Вам перезвоним">
-        <div class="row">
-            <div class="col-md-8">
-                <div id="cta" class="cta">Купите <span class="cr-product-name"></span> в рассрочку по самой выгодной цене: <span class="cr-price">2500р/мес</span></div>
-                <div id="cr-btn-box">
-                    <button class="btn  cr-btn" type="button" onClick="openPopup()">Купить в кредит</button>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="cr-right">
-
-                    <button type="button" class="cr-control btn btn-primary"><span aria-hidden="true">?</span></button>
-                    <button type="button" class="cr-control btn btn-primary" onclick="$('#cr-bar').hide();"><span aria-hidden="true">×</span></button>
-                </div>
-
-
-            </div>
-
-        </div>
-        <div class="container">
-
-
-            <div id="popup" style="display: none;">
-                <div id="closePopupArea" style="display:none" onClick="closePopup()"></div>
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" onClick="closePopup()"><span aria-hidden="true">×</span></button>
-                            <h5 class="modal-title" id="myModalLabel">Купить <span class="cr-product-name"></span> в рассрочку</h5>
-                        </div>
-                        <div class="modal-body">
-
-                            <form class="contact-form" id="offer-form" role="form" method="POST">
-
-                                <!-- IF MAIL SENT SUCCESSFULLY
-                        <h6 class="successContent">
-                            <i class="fa fa-check left" style="color: #5cb45d;"></i>Спасибо! Ваше сообщение было успешно отправлено.
-                        </h6>
-                        <!-- END IF MAIL SENT SUCCESSFULLY
-                        <!-- MAIL SENDING UNSUCCESSFULL
-                        <h6 class="errorContent">
-                            <i class="fa fa-exclamation-circle left" style="color: #e1534f;"></i>Неправильно заполнена форма, пожалуйста, проверьте!
-                        </h6>
-                        <!-- END MAIL SENDING UNSUCCESSFULL -->
-                                <div id="form-body">
-                                    <p>Оставьте контактные данные и с вами свяжется сотрудник банка</p>
-                                    <input type="hidden" name="DATA[TITLE]" value="Заявка с сайта">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="DATA[NAME]" placeholder="Имя" autofocus required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="DATA[PHONE_MOBILE]" placeholder="Телефон" required="">
-                                    </div>
-                                    <button class="btn btn-md btn-primary btn-popup btn-block">Получить звонок от банка</button>
-                                </div>
-                                <div id="gratz" style="display:none">
-                                    <div class="text-success">Ваша заявка успешно отправлена. Сотрудник банка свяжется с вами
-                                        <br>в ближайшее время</div>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+   
+    </div>
+    <script type="text/javascript" src="js/labnol.js"></script>
 </body>
 
 </html>

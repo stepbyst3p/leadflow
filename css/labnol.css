@@ -285,6 +285,7 @@ table.body-wrap,
     font-weight: 600 !important;
     width: 32px;
     height: 32px;
+    margin-left: 9px;
 }
 .cr-close {
     border-radius: 50%;
@@ -309,7 +310,7 @@ table.body-wrap,
 }
 .cr-right {
     float: right;
-    top: -1px;
+    top: 3px;    
     position: relative;
 }
 .cr-info {

@@ -4,6 +4,45 @@ document.addEventListener('DOMContentLoaded', function () {
     isMarket()
 });
 
+function addCSS() {
+    var cssId = 'myCss'; // you could encode the css path itself to generate id..
+    if (!document.getElementById(cssId)) {
+        var head = document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+        link.id = cssId;
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/labnol.css';
+        link.media = 'all';
+        head.appendChild(link);
+    }
+}
+
+function getProductName() {
+    var productName = document.getElementsByTagName('h1').innerText;
+      document.getElementByClassName('.cr-product-name').html( productName );          
+}
+
+function renderBar(el, str) {    
+    var div = document.createElement('div');
+    div.innerHTML = str;
+    while (div.children.length > 0) {
+        el.appendChild(div.children[0]);        
+    }
+
+
+}
+
+function renderPopup(el, str) {    
+    var div = document.createElement('div');
+    div.innerHTML = str;
+    while (div.children.length > 0) {
+        el.appendChild(div.children[0]);        
+    }
+
+
+}
+
 function isMarket() {
     var bar = document.getElementById('cr-bar');
     // metrika — плохое название
@@ -47,11 +86,15 @@ function isMarket() {
     debugMessage += '\nВсего правил сработало: ' + probability
 
 
-    // как только увидишь это — удали алерт, чтобы не бесил.
     console.log(debugMessage)
 
+    var barHtml = '<div id="cr-bar" style="display:block" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Замер производится БЕСПЛАТНО. Оставьте заявку, мы Вам перезвоним"><div class="row"><div class="col-md-8"><div id="cta" class="cta">Купите <span class="cr-product-name"></span> в рассрочку по самой выгодной цене: <span class="cr-price">2500р/мес</span></div><div id="cr-btn-box"><button class="btn  cr-btn" type="button" onClick="openPopup()">Купить в кредит</button></div></div><div class="col-md-4"><div class="cr-right"><button type="button" class="cr-control btn btn-primary"><span aria-hidden="true">?</span></button><button type="button" class="cr-control btn btn-primary"><span aria-hidden="true">×</span></button></div></div></div></div>';
+    var popupHtml = '<div id="popup" style="display: none;"><div id="closePopupArea" style="display:none" onClick="closePopup()"></div><div class="modal-dialog modal-sm"><div class="modal-content"><div class="modal-header"><button type="button" class="close" onClick="closePopup()"><span aria-hidden="true">×</span></button><h5 class="modal-title" id="myModalLabel">Купить <span class="cr-product-name"></span> в рассрочку</h5></div><div class="modal-body"><form class="contact-form" id="offer-form" role="form" method="POST">                            <h6 class="successContent" style="display:none"><i class="fa fa-check left" style="color: #5cb45d;"></i>Спасибо! Ваше сообщение было успешно отправлено.</h6>                                                <h6 class="errorContent" style="display:none"><i class="fa fa-exclamation-circle left" style="color: #e1534f;"></i>Неправильно заполнена форма, пожалуйста, проверьте!</h6>                        <div id="form-body"><p>Оставьте контактные данные и с вами свяжется сотрудник банка</p><input type="hidden" name="DATA[TITLE]" value="Заявка с сайта"><div class="form-group"><input class="form-control" type="text" name="DATA[NAME]" placeholder="Имя" autofocus required=""></div><div class="form-group"><input class="form-control" type="text" name="DATA[PHONE_MOBILE]" placeholder="Телефон" required=""></div><button class="btn btn-md btn-primary btn-popup btn-block">Получить звонок от банка</button></div><div id="gratz" style="display:none"><div class="text-success">Ваша заявка успешно отправлена. Сотрудник банка свяжется с вами<br>в ближайшее время</div></div></form></div></div></div></div>';
     if (probability >= 3) {
-        bar.style.display = 'block';
+        addCSS();
+        getProductName();
+        renderBar(document.body, barHtml);
+        renderPopup(document.body, popupHtml);
     } else {
         return false
     }
@@ -143,3 +186,6 @@ function closePopup() {
     popup.style.display = 'none'
     closePopupArea.style.display = 'none'
 }
+
+
+
